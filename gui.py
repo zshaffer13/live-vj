@@ -87,6 +87,26 @@ class ControlPanel:
             text="Reset View (R)",
             command=self._on_reset
         ).pack(fill='x', padx=10, pady=(20, 5))
+        
+# =============================================================================
+#         # under your existing controls...
+#         ttk.Label(self.root, text="Max Steps:").pack()
+#         self.steps_var = tk.IntVar(value=128)
+#         ttk.Scale(self.root, from_=16, to=512, variable=self.steps_var,
+#                   command=lambda v: setattr(viewer, 'maxSteps', int(float(v)))
+#         ).pack(fill='x')
+#         
+#         ttk.Label(self.root, text="Fog Density:").pack(pady=(10,0))
+#         self.fog_var = tk.DoubleVar(value=0.5)
+#         tk.Scale(
+#             self.root,
+#             from_=0.0, to=2.0,
+#             resolution=0.01,
+#             orient='horizontal',
+#             variable=self.fog_var,
+#             command=lambda v: setattr(viewer, 'fogDensity', float(v))
+#         ).pack(fill='x')
+# =============================================================================
 # =============================================================================
 #         ttk.Button(
 #             self.root,

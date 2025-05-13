@@ -58,6 +58,11 @@ class FractalViewer(mglw.WindowConfig):
         self.num_schemes           = len(COLOR_SCHEMES)
         self.enable_shadows        = True
         self.render_mode           = 'fractal'
+        
+        self.maxSteps   = 128
+        self.maxDist    = 10.0
+        #self.surfDist   = 0.001
+        #self.fogDensity = 0.5
 
         # 3D shader program
         shaders_dir = pathlib.Path(__file__).parent / 'shaders'
@@ -145,6 +150,15 @@ class FractalViewer(mglw.WindowConfig):
 
         # clear screen
         self.ctx.clear()
+        
+        if self.current_shader_key == 'V':
+            # point the camera at the origin, for example:
+            self.program['cameraPos'].value    = (0.0, 0.0, 3.0)
+            self.program['cameraDir'].value    = (0.0, 0.0, -1.0)
+            self.program['maxSteps'].value     = 128
+            self.program['maxDist'].value      = 10.0
+            self.program['surfDist'].value     = 0.001
+            self.program['fogDensity'].value   = 0.5
 
         if self.render_mode == 'fractal':
             # set fractal uniforms

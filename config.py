@@ -29,6 +29,7 @@ FRACTAL_SHADERS = {
     'U': 'mandelbulb.frag',
     'S': 'sphere_grid.frag',
     'K': 'kaleido.frag',
+    #'V': 'volumetric_raymarch.frag',
 }
 
 # For your Tk radio buttons
@@ -42,6 +43,7 @@ FRACTAL_LABELS = {
     'U': 'Mandelbulb 3D (U)',
     'S': 'Sphere Grid (S)',
     'K': 'Kaleido Tunnel (K)',
+    #'V': 'Volumetric SDF (V)',
 }
 
 #For Tk radio buttons
